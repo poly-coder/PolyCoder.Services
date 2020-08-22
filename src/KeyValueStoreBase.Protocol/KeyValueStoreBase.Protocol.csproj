@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>PolyCoder.Services.KeyValueStoreBase.Protocol</RootNamespace>
+    <AssemblyName>PolyCoder.Services.KeyValueStoreBase.Protocol</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="google\rpc\code.proto" />
+    <None Remove="google\rpc\error_details.proto" />
+    <None Remove="google\rpc\status.proto" />
+    <None Remove="protos\KeyValueStoreBase.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.13.0" />
+    <PackageReference Include="Grpc" Version="2.31.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.31.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="google\rpc\code.proto" />
+    <Protobuf Include="google\rpc\error_details.proto" />
+    <Protobuf Include="google\rpc\status.proto" />
+    <Protobuf Include="protos\KeyValueStoreBase.proto" />
+  </ItemGroup>
+
+</Project>

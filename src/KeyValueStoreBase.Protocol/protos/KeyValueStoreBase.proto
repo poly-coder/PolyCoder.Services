@@ -1,0 +1,139 @@
+﻿syntax = "proto3";
+
+package polycoder.services.keyvaluestorebase;
+option csharp_namespace = "PolyCoder.Services.KeyValueStoreBase.Protocol";
+
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
+
+enum TimeoutKind {
+  NONE = 0;
+  DEFAULT = 1;
+  DATE = 2;
+  TIMESPAN_MINUTES = 3;
+  PERMANENT = 4;
+}
+
+message KeyValueProperties {
+
+  string content_type = 1;
+  int64 content_length = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp modified_at = 4;
+  google.protobuf.Timestamp time_to_live = 5;
+  string correlation_id = 6;
+  string user_id = 7;
+}
+
+// KeyValue Store Base Metadata Service
+
+service KeyValueStoreBaseMetadataService {
+  rpc Capabilities(KeyValueStoreBaseCapabilitiesRequest) returns (KeyValueStoreBaseCapabilitiesResponse);
+}
+
+message KeyValueStoreBaseCapabilitiesRequest {}
+
+message KeyValueStoreBaseCapabilitiesResponse {
+  google.rpc.Status status = 1;
+  bool can_list = 2;
+  bool can_fetch = 3;
+  bool can_store = 4;
+  bool can_clear = 5;
+  bool handles_timeout = 6;
+  string path_separator = 7;
+}
+
+// KeyValue Store Base Lister Service
+
+service KeyValueStoreBaseListerService {
+  rpc List(KeyValueStoreBaseListRequest) returns (stream KeyValueStoreBaseListResponse);
+}
+
+message KeyValueContentInclusions {
+  bool include_metadata = 2;
+  bool include_value = 3;
+  bool include_properties = 4;
+}
+
+message KeyValueContent {
+  string key = 1;
+  map<string, string> metadata = 2;
+  bytes value = 3;
+  KeyValueProperties properties = 4;
+}
+
+message KeyValueStoreBaseListRequest {
+  string key_prefix = 1;
+  KeyValueContentInclusions inclusions = 2;
+}
+
+message KeyValueStoreBaseListResponse {
+  google.rpc.Status status = 1;
+  int32 page_number = 2; 
+  repeated KeyValueContent items = 3;
+  bool is_last_page = 4;
+}
+
+// KeyValue Store Base Fetcher Service
+
+service KeyValueStoreBaseFetcherService {
+  rpc Fetch(KeyValueStoreBaseFetchRequest) returns (KeyValueStoreBaseFetchResponse);
+}
+
+message KeyValueStoreBaseFetchRequest {
+  string key = 1;
+  KeyValueContentInclusions inclusions = 2;
+}
+
+message KeyValueStoreBaseFetchResponse {
+  google.rpc.Status status = 1;
+  bool found = 2;
+  KeyValueContent content = 3;
+}
+
+// KeyValue Store Base Storer Service
+
+service KeyValueStoreBaseStorerService {
+  rpc Store(KeyValueStoreBaseStoreRequest) returns (KeyValueStoreBaseStoreResponse);
+  rpc Remove(KeyValueStoreBaseRemoveRequest) returns (KeyValueStoreBaseRemoveResponse);
+}
+
+message KeyValueStoreBaseStoreRequest {
+  string key = 1;
+  map<string, string> metadata = 2;
+  bytes value = 3;
+  string content_type = 4;
+  TimeoutKind timeout_kind = 5;
+  google.protobuf.Timestamp timeout_date = 6;
+  int32 timeout_span = 7;
+  string correlation_id = 8;
+  string user_id = 9;
+}
+
+message KeyValueStoreBaseStoreResponse {
+  google.rpc.Status status = 1;
+  KeyValueProperties properties = 2;
+}
+
+message KeyValueStoreBaseRemoveRequest {
+  string key = 1;
+}
+
+message KeyValueStoreBaseRemoveResponse {
+  google.rpc.Status status = 1;
+}
+
+// KeyValue Store Base Clearer Service
+
+service KeyValueStoreBaseClearerService {
+  rpc Clear(KeyValueStoreBaseClearRequest) returns (KeyValueStoreBaseClearResponse);
+}
+
+message KeyValueStoreBaseClearRequest {
+  string key_prefix = 1;
+  // TODO: Add Metadata and Properties filters
+}
+
+message KeyValueStoreBaseClearResponse {
+  google.rpc.Status status = 1;
+}

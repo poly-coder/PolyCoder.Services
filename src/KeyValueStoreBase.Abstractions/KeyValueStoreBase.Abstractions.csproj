@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>PolyCoder.Services.KeyValueStoreBase.Abstractions</AssemblyName>
+    <RootNamespace>PolyCoder.Services.KeyValueStoreBase.Abstractions</RootNamespace>
+  </PropertyGroup>
+
+</Project>

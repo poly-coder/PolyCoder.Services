@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F517C6C-BDF3-4D0B-9D9C-E909F12FDCD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyValueStoreBase.Protocol", "src\KeyValueStoreBase.Protocol\KeyValueStoreBase.Protocol.csproj", "{E2BA2E87-1528-4122-81AC-CFD2A6AD5DCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyValueStoreBase.Azure.Blobs", "src\KeyValueStoreBase.Azure.Blobs\KeyValueStoreBase.Azure.Blobs.csproj", "{BD598D86-E6D6-478C-96CD-244C359ABDF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyValueStoreBase.Abstractions", "src\KeyValueStoreBase.Abstractions\KeyValueStoreBase.Abstractions.csproj", "{3EB9B298-3074-4BF6-AD0B-C7251557697D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyValueStoreBase.GrpcClient", "src\KeyValueStoreBase.GrpcClient\KeyValueStoreBase.GrpcClient.csproj", "{359408BF-11CC-42F8-9FAC-C43F790041A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2BA2E87-1528-4122-81AC-CFD2A6AD5DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2BA2E87-1528-4122-81AC-CFD2A6AD5DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2BA2E87-1528-4122-81AC-CFD2A6AD5DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BA2E87-1528-4122-81AC-CFD2A6AD5DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD598D86-E6D6-478C-96CD-244C359ABDF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD598D86-E6D6-478C-96CD-244C359ABDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD598D86-E6D6-478C-96CD-244C359ABDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD598D86-E6D6-478C-96CD-244C359ABDF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB9B298-3074-4BF6-AD0B-C7251557697D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB9B298-3074-4BF6-AD0B-C7251557697D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB9B298-3074-4BF6-AD0B-C7251557697D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB9B298-3074-4BF6-AD0B-C7251557697D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359408BF-11CC-42F8-9FAC-C43F790041A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359408BF-11CC-42F8-9FAC-C43F790041A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359408BF-11CC-42F8-9FAC-C43F790041A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359408BF-11CC-42F8-9FAC-C43F790041A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2BA2E87-1528-4122-81AC-CFD2A6AD5DCE} = {6F517C6C-BDF3-4D0B-9D9C-E909F12FDCD9}
+		{BD598D86-E6D6-478C-96CD-244C359ABDF0} = {6F517C6C-BDF3-4D0B-9D9C-E909F12FDCD9}
+		{3EB9B298-3074-4BF6-AD0B-C7251557697D} = {6F517C6C-BDF3-4D0B-9D9C-E909F12FDCD9}
+		{359408BF-11CC-42F8-9FAC-C43F790041A5} = {6F517C6C-BDF3-4D0B-9D9C-E909F12FDCD9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE61BFEF-6A6E-4BD4-9063-115D48376E77}
+	EndGlobalSection
+EndGlobal

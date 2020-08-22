@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>PolyCoder.Services.KeyValueStoreBase.GrpcClient</AssemblyName>
+    <RootNamespace>PolyCoder.Services.KeyValueStoreBase.GrpcClient</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetX" Version="0.0.8" />
+    <PackageReference Include="Google.Protobuf" Version="3.13.0" />
+    <PackageReference Include="Grpc" Version="2.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KeyValueStoreBase.Abstractions\KeyValueStoreBase.Abstractions.csproj" />
+    <ProjectReference Include="..\KeyValueStoreBase.Protocol\KeyValueStoreBase.Protocol.csproj" />
+  </ItemGroup>
+
+</Project>

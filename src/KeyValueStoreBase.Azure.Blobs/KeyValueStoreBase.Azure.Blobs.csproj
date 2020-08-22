@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>PolyCoder.Services.KeyValueStoreBase.Azure.Blobs</AssemblyName>
+    <RootNamespace>PolyCoder.Services.KeyValueStoreBase.Azure.Blobs</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.5.1" />
+    <PackageReference Include="DotNetX" Version="0.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KeyValueStoreBase.Abstractions\KeyValueStoreBase.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
